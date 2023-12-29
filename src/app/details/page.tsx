@@ -178,7 +178,7 @@ export default function DetailsPage({
         display: "flex",
         flexDirection: "column",
         width: "100svw",
-        height: "100svh",
+        height: isMobile ? "auto" : "100svh",
         alignItems: "center",
         background: `linear-gradient(to bottom, ${colors} 0% , orange ${
           isMobile ? "50%" : "150%"
@@ -194,8 +194,8 @@ export default function DetailsPage({
           height: isMobile ? "5svh" : "10svh",
           borderRadius: "0px 0px 8px 8px",
           boxShadow: "2px 2px 8px 1px #000",
-          position: "absolute",
-          top: "0px",
+          position: "relative",
+          // top: "0px",
           zIndex: 0,
         }}
       >
@@ -243,8 +243,8 @@ export default function DetailsPage({
         style={{
           borderRadius: "8px",
           padding: isMobile ? 0 : 20,
-          position: "absolute",
-          top: isMobile ? "7svh" : "50px",
+          position: isMobile ? "relative" : "absolute",
+          top: isMobile ? "0svh" : "50px",
           zIndex: 2,
         }}
       >
@@ -261,15 +261,17 @@ export default function DetailsPage({
           backgroundColor: "#fff",
           // background: `linear-gradient(to bottom, lightgray 0% , white 20%)`,
           width: isMobile ? "100%" : "50%",
-          height: isMobile ? "60svh" : "40svh",
+          // height: isMobile ? "auto" : "40svh",
+          paddingBottom: "16px",
           borderRadius: "8px 8px 0px 0px",
           boxShadow: "2px 2px 8px 1px #000",
-          position: "absolute",
+          position: isMobile ? "relative" : "absolute",
           bottom: "0px",
           zIndex: 0,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <div
