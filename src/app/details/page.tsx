@@ -11,8 +11,6 @@ import Link from "next/link";
 import StraightenIcon from "@mui/icons-material/Straighten";
 import ScaleIcon from "@mui/icons-material/Scale";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 interface PokemonProps {
   searchParams: {
@@ -41,8 +39,6 @@ export default function DetailsPage({
     types,
   },
 }: PokemonProps) {
-  // const [pokemons, setPokemons] = useState([{}]);
-  // const [currentId, setCurrentId] = useState(id);
   const colors = color === "white" ? "lightgray" : color;
 
   const isMobile = useMediaQuery("(max-width: 500px)");
@@ -64,114 +60,6 @@ export default function DetailsPage({
     (value) => (Number(value) / maxValue) * 100
   );
 
-  // const prevId = Number(id) > 1 ? Number(id) - 1 : Number(id);
-  // const nextId = Number(id) < 500 ? Number(id) + 1 : Number(id);
-
-  // const getPokemonsDetails = async () => {
-  //   // PREVIOUS POKEMON
-  //   const prevPokemonData: any =
-  //     await axios.get(`https://pokeapi.co/api/v2/pokemon/${prevId}
-  //   `);
-  //   const prevName = prevPokemonData.data.name;
-  //   const prevImage =
-  //     prevPokemonData.data.sprites.other.dream_world.front_default;
-  //   const promissePrevColor = await axios.get(prevPokemonData.data.species.url);
-  //   const prevColor = promissePrevColor.data.color.name;
-  //   const prevWeight = prevPokemonData.data.weight;
-  //   const prevHeight = prevPokemonData.data.height;
-  //   const prevStatsNames = prevPokemonData.data.stats.map(
-  //     (stats: any) => stats.stat.name
-  //   );
-  //   const prevStatsValues = prevPokemonData.data.stats.map(
-  //     (stats: any) => stats.base_stat
-  //   );
-  //   const prevTypes = prevPokemonData.data.types.map(
-  //     (types: any) => types.type.name
-  //   );
-
-  //   const prevPokemon = {
-  //     name: prevName,
-  //     image: prevImage,
-  //     color: prevColor,
-  //     weight: prevWeight,
-  //     height: prevHeight,
-  //     statsNames: prevStatsNames,
-  //     statsValues: prevStatsValues,
-  //     types: prevTypes,
-  //   };
-
-  //   // CURRENT POKEMON
-  //   const currentPokemonData: any =
-  //     await axios.get(`https://pokeapi.co/api/v2/pokemon/${currentId}
-  //   `);
-  //   const currentName = currentPokemonData.data.name;
-  //   const currentImage =
-  //     currentPokemonData.data.sprites.other.dream_world.front_default;
-  //   const promisseCurrentColor = await axios.get(
-  //     currentPokemonData.data.species.url
-  //   );
-  //   const currentColor = promisseCurrentColor.data.color.name;
-  //   const currentWeight = currentPokemonData.data.weight;
-  //   const currentHeight = currentPokemonData.data.height;
-  //   const currentStatsNames = currentPokemonData.data.stats.map(
-  //     (stats: any) => stats.stat.name
-  //   );
-  //   const currentStatsValues = currentPokemonData.data.stats.map(
-  //     (stats: any) => stats.base_stat
-  //   );
-  //   const currentTypes = currentPokemonData.data.types.map(
-  //     (types: any) => types.type.name
-  //   );
-
-  //   const currentPokemon = {
-  //     name: currentName,
-  //     image: currentImage,
-  //     color: currentColor,
-  //     weight: currentWeight,
-  //     height: currentHeight,
-  //     statsNames: currentStatsNames,
-  //     statsValues: currentStatsValues,
-  //     types: currentTypes,
-  //   };
-
-  //   // NEXT POKEMON
-  //   const nextPokemonData: any =
-  //     await axios.get(`https://pokeapi.co/api/v2/pokemon/${nextId}
-  //   `);
-  //   const nextName = nextPokemonData.data.name;
-  //   const nextImage =
-  //     nextPokemonData.data.sprites.other.dream_world.front_default;
-  //   const promisseNextColor = await axios.get(nextPokemonData.data.species.url);
-  //   const nextColor = promisseNextColor.data.color.name;
-  //   const nextWeight = nextPokemonData.data.weight;
-  //   const nextHeight = nextPokemonData.data.height;
-  //   const nextStatsNames = nextPokemonData.data.stats.map(
-  //     (stats: any) => stats.stat.name
-  //   );
-  //   const nextStatsValues = nextPokemonData.data.stats.map(
-  //     (stats: any) => stats.base_stat
-  //   );
-  //   const nextTypes = nextPokemonData.data.types.map(
-  //     (types: any) => types.type.name
-  //   );
-  //   const nextPokemon = {
-  //     name: nextName,
-  //     image: nextImage,
-  //     color: nextColor,
-  //     weight: nextWeight,
-  //     height: nextHeight,
-  //     statsNames: nextStatsNames,
-  //     statsValues: nextStatsValues,
-  //     types: nextTypes,
-  //   };
-
-  //   setPokemons([prevPokemon, currentPokemon, nextPokemon]);
-  // };
-
-  // useEffect(() => {
-  //   getPokemonsDetails();
-  // }, []);
-
   return (
     <div
       style={{
@@ -189,13 +77,12 @@ export default function DetailsPage({
       <div
         style={{
           backgroundColor: "#fff",
-          // background: `linear-gradient(to top, lightgray 0% , white 20%)`,
           width: isMobile ? "100%" : "50%",
-          height: isMobile ? "5svh" : "10svh",
+          height: isMobile ? "auto" : "10svh",
+          padding: isMobile ? "16px 0px 16px" : "0px",
           borderRadius: "0px 0px 8px 8px",
           boxShadow: "2px 2px 8px 1px #000",
           position: "relative",
-          // top: "0px",
           zIndex: 0,
         }}
       >
@@ -242,7 +129,7 @@ export default function DetailsPage({
       <div
         style={{
           borderRadius: "8px",
-          padding: isMobile ? 0 : 20,
+          padding: isMobile ? 8 : 20,
           position: isMobile ? "relative" : "absolute",
           top: isMobile ? "0svh" : "50px",
           zIndex: 2,
@@ -259,9 +146,7 @@ export default function DetailsPage({
       <div
         style={{
           backgroundColor: "#fff",
-          // background: `linear-gradient(to bottom, lightgray 0% , white 20%)`,
           width: isMobile ? "100%" : "50%",
-          // height: isMobile ? "auto" : "40svh",
           paddingBottom: "16px",
           borderRadius: "8px 8px 0px 0px",
           boxShadow: "2px 2px 8px 1px #000",
@@ -298,6 +183,7 @@ export default function DetailsPage({
             variant={isMobile ? "body2" : "body1"}
             fontWeight={500}
             textAlign={"center"}
+            alignSelf={"center"}
           >
             {typeHandler()}
           </Typography>
