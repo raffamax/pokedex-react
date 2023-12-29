@@ -114,7 +114,7 @@ export default function DetailsPage({
           </Link>
           <Typography
             textTransform={"uppercase"}
-            variant="h5"
+            variant={isMobile ? "body1" : "h5"}
             textAlign={"center"}
           >
             {name}
@@ -180,7 +180,7 @@ export default function DetailsPage({
             {`${weightBR} Kg`}
           </Typography>
           <Typography
-            variant={isMobile ? "body2" : "body1"}
+            variant={isMobile ? "caption" : "body1"}
             fontWeight={500}
             textAlign={"center"}
             alignSelf={"center"}
