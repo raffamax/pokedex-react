@@ -29,7 +29,7 @@ export default function FloatButton() {
 
   return (
     <Fab
-      color="default"
+      color="inherit"
       aria-label="scroll-to-top"
       sx={{
         position: "fixed",
@@ -37,7 +37,8 @@ export default function FloatButton() {
         right: 24,
         visibility: isVisible ? "visible" : "hidden",
         opacity: isVisible ? 1 : 0,
-        transition: "visibility hover 0s, opacity 0.5s linear",
+        transition: "visibility 0s, opacity 0.5s linear",
+        backgroundColor: "white",
       }}
       onClick={scrollToTop}
     >
