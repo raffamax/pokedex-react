@@ -1,5 +1,6 @@
 "use client";
 
+import FloatButton from "@/components/FloatButton";
 import NavBar from "@/components/NavBar";
 import PokemonCard from "@/components/PokemonCard";
 import CircularIndeterminate from "@/components/Progress";
@@ -127,6 +128,7 @@ export default function Home() {
             )}
           </Grid>
         </InfiniteScroll>
+        <FloatButton />
       </Container>
     </>
   );
