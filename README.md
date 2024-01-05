@@ -16,3 +16,9 @@ Sei que uma pokedex já é um clássico pra quem está começando no Front-End, 
 - Material UI
 - Axios
 - Deploy na Vercel
+
+Para testar, clique [aqui](https://pokedex-react-rafamax.vercel.app/).
+___
+
+## Projeto desenvolvido por:
+[![Linkedin Badge](https://img.shields.io/badge/-Rafael%20Maximiano-0a66c2?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/developer-rafaelmaximiano/)](https://www.linkedin.com/in/developer-rafaelmaximiano/)
